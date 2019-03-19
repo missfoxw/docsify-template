@@ -4,5 +4,5 @@ follow the tutorial
 ## create repository
 ## create branch
 ### creare branch named readme-edits from master
-### eidts in `README.md`
+### edits in `README.md`
 ### commits
