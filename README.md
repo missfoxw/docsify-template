@@ -5,4 +5,8 @@ follow the tutorial
 ## create branch
 ### creare branch named readme-edits from master
 ### edits in `README.md`
-### commits
+### add commits
+
+## open a pull request
+
+## merge a pull request
