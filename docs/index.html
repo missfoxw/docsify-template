@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>这是个模板</title>
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!-- 可定制主题 -->
+  <link rel="stylesheet" href="static/docsify/themes/theme-defaults.css">
+  <!--支持mermaid-->
+  <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css">
+  <style>
+    /*列宽度自适应不换行*/
+    table td { width: 10%; white-space:nowrap; }
+    /*表头颜色*/  
+    table thead{background-color:rgb(58, 140, 201);}
+    /*斑马线 */
+    table tr:nth-of-type(2n){background-color:rgb(246, 249, 252);}
+    table td:nth-of-type(2n){color:rgb(19, 137, 202);}
+    #myTitle{
+      text-align:center;
+    }
+    :root {
+      --base-font-size: 13px;
+    }
+</style>
+</head>
+<body>
+  <!-- 可以定制导航栏，也可以 load from _navbar.md 或者自定义文件-->
+  <!-- <nav>
+    <a href="#/">EN</a>
+    <a href="#/zh-cn/">中文</a>
+  </nav> -->
+  <div id="app">加载中...</div>
+  <!-- 支持mermaid -->
+  <script src="static/mermaid/dist/mermaid.min.js"></script>
+
+  <script>
+      mermaid.initialize({ startOnLoad: false });
+  
+      window.$docsify = {
+        // 标题
+        name: '这是主标题',
+        //你的logo
+        // logo: 'static/img/logo.png',
+        //配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件
+        repo: 'missfoxw/pdi-kettle',
+        coverpage: true, // 封面
+        // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级
+        maxLevel: 3,
+        // 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
+        subMaxLevel: 4,
+        // 加载侧边栏
+        loadSidebar: true,
+        // 启用导航栏load from _navbar.md ,也可以在此页面自定义导航栏
+        loadNavbar: true,
+        // 自动为每个页面添加标题
+        autoHeader: true,
+        // 切换页面后是否自动跳转到页面顶部
+        auto2top: true,
+        // 小屏设备下合并导航栏到侧边栏
+        mergeNavbar: true,
+        // 你的主题色
+        themeColor: '#38ada9',
+        // 文档编辑日期格式
+        formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}',
+        //加载自定义404页面
+        notFoundPage: 'my404.md',
+        // 配置 alias 避免不必要的回退过程
+        alias: {
+          '/.*/_navbar.md': '/_navbar.md',
+          '/.*/_sidebar.md': '/_sidebar.md'
+        },
+        // 分页
+        pagination: {
+          previousText: '上一篇',
+          nextText: '下一篇',
+          crossChapter: true
+        },
+        // markdown 配置，支持 mermaid
+        markdown: {
+          renderer: {
+            code: function(code, lang) {
+              if (lang === "mermaid") {
+                return (
+                  '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
+                );
+              }
+              return this.origin.code.apply(this, arguments);
+            }
+          }
+        },
+        // 搜索配置
+        search: {
+          noData: {
+            '/de-de/': 'Keine Ergebnisse!',
+            '/zh-cn/': '没有结果!',
+            '/': 'No results!'
+          },
+          paths: 'auto',
+          placeholder: {
+            '/de-de/': 'Suche',
+            '/zh-cn/': '搜索',
+            '/': '🔍搜索关键字...'
+          },
+          // 搜索标题的最大程级, 1 - 6
+          depth: 2
+        },
+        // docsify 提供了一套插件机制，其中提供的钩子（hook）支持处理异步逻辑，可以很方便的扩展功能
+        plugins: [
+          function (hook, vm) {
+            // 每次开始解析 Markdown 内容时调用
+            hook.beforeEach(function (html) {
+  
+              url = 'https://github.com/missfoxw/pdi-kettle/tree/master/docs/' + vm.route.file
+              
+              var editHtml = '[📝 edit](' + url + ')\n\n'
+  
+              return editHtml
+                + html
+                + '\n\n----\n\n'
+                + '<a href="https://github.com/missfoxw" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">by 狐狸小姐 ✈ {docsify-updated}'
+                + '</a>'
+            })
+  
+            // hook.init(function() {
+            //   // 初始化时调用，只调用一次，没有参数。
+            // })
+  
+            // hook.afterEach(function(html, next) {
+            //   // 解析成 html 后调用。beforeEach 和 afterEach 支持处理异步逻辑
+            //   // ...
+            //   // 异步处理完成后调用 next(html) 返回结果
+            //   next(html)
+            // })
+  
+            // hook.doneEach(function() {
+            //   // 每次路由切换时数据全部加载完成后调用，没有参数。
+            //   // ...
+            // })
+  
+            // hook.mounted(function() {
+            //   // 初始化完成后调用 ，只调用一次，没有参数。
+            // })
+  
+            // hook.ready(function() {
+            //   // 初始化并第一次加完成数据后调用，没有参数。
+            // })
+          },
+        ]
+      }
+    </script>
+
+    <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
+    <script src="static/docsify/lib/docsify.min.js"></script>
+    <!-- 搜索 -->
+    <script src="static/docsify/lib/plugins/search.min.js"></script>
+    <!-- 代码高亮  static/prismjs/components 目录下按需引入-->
+    <script src="static/prismjs/components/prism-bash.min.js"></script>
+    <script src="static/prismjs/components/prism-sql.min.js"></script>
+    <script src="static/prismjs/components/prism-c.min.js"></script>
+    
+    <!-- 分页 -->
+    <script src="static/docsify-pagination/dist/docsify-pagination.min.js"></script>
+</body>
+</html>

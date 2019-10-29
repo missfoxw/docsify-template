@@ -14,7 +14,7 @@
 
 ### 安装node
 
-```bash
+```batch
 # 首先安装必要的环境
 yum install gcc gcc-c++
 
@@ -42,12 +42,12 @@ npm -v
 
 ### 安装docsify
 
-```bash
+```batch
 ```
 
 ### 安装git
 
-```bash
+```batch
 # 首先安装必要的环境
 yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
 
@@ -82,3 +82,4 @@ git --version
 ```
 
 ### 克隆项目并生成
+
