@@ -1,12 +1,10 @@
-# hello-world
-follow the tutorial
+# docsify-template
 
-## create repository
-## create branch
-### creare branch named readme-edits from master
-### edits in `README.md`
-### add commits
+整理的docsify 模板，包括：
 
-## open a pull request
-
-## merge a pull request
+* 主题
+* 分页
+* github 挂件
+* edit in repo
+* 搜索
+* 最后编辑时间
