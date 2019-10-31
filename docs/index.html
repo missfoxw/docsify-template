@@ -6,9 +6,12 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!-- 可定制主题 -->
-  <link rel="stylesheet" href="static/docsify/themes/theme-defaults.css">
+  <link rel="stylesheet" href="static/docsify/themes/buble.css" title="buble" disabled>
+  <link rel="stylesheet" href="static/docsify/themes/vue.css" title="vue" disabled>
+  <link rel="stylesheet" href="static/docsify/themes/dark.css" title="dark" disabled>
+  <link rel="stylesheet" href="static/docsify/themes/theme-simple.css" title="theme-simple" >
   <!--支持mermaid-->
-  <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css">
+  <!-- <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css"> -->
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -16,7 +19,7 @@
     table thead{background-color:rgb(58, 140, 201);}
     /*斑马线 */
     table tr:nth-of-type(2n){background-color:rgb(246, 249, 252);}
-    table td:nth-of-type(2n){color:rgb(19, 137, 202);}
+    table td:nth-of-type(2n){color:rgb(34, 151, 214);}
     #myTitle{
       text-align:center;
     }
@@ -27,16 +30,38 @@
 </head>
 <body>
   <!-- 可以定制导航栏，也可以 load from _navbar.md 或者自定义文件-->
-  <!-- <nav>
-    <a href="#/">EN</a>
-    <a href="#/zh-cn/">中文</a>
-  </nav> -->
+  <nav>
+    <ul>
+      <li>
+        <p id="nav_d">👘主题切换</p>
+        <ul class="demo-theme-preview">
+          <li><a target="_blank" data-theme="vue">vue</a></li>
+          <li><a target="_blank" data-theme="dark">dark</a></li>
+          <li><a target="_blank" data-theme="buble">buble</a></li>
+          <li><a target="_blank" data-theme="theme-simple">simple</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
   <div id="app">加载中...</div>
-  <!-- 支持mermaid -->
-  <script src="static/mermaid/dist/mermaid.min.js"></script>
 
-  <script>
-      mermaid.initialize({ startOnLoad: false });
+  <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
+  <script src="static/docsify/lib/docsify.min.js"></script>
+  <!-- 支持mermaid -->
+  <!-- <script src="static/mermaid/dist/mermaid.min.js"></script> -->
+
+  <script>  
+      var preview = Docsify.dom.find('.demo-theme-preview');
+      var themes = Docsify.dom.findAll('[rel="stylesheet"]');
+
+      preview.onclick = function (e) {
+        var title = e.target.getAttribute('data-theme')
+
+        themes.forEach(function (theme) {
+          theme.disabled = theme.title !== title
+        });
+      };
+      // mermaid.initialize({ startOnLoad: false });
   
       window.$docsify = {
         // 标题
@@ -53,7 +78,7 @@
         // 加载侧边栏
         loadSidebar: true,
         // 启用导航栏load from _navbar.md ,也可以在此页面自定义导航栏
-        loadNavbar: true,
+        loadNavbar: false,
         // 自动为每个页面添加标题
         autoHeader: true,
         // 切换页面后是否自动跳转到页面顶部
@@ -61,7 +86,7 @@
         // 小屏设备下合并导航栏到侧边栏
         mergeNavbar: true,
         // 你的主题色
-        themeColor: '#38ada9',
+        themeColor: 'rgb(34, 151, 214)',
         // 文档编辑日期格式
         formatUpdated: '{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}',
         //加载自定义404页面
@@ -78,18 +103,18 @@
           crossChapter: true
         },
         // markdown 配置，支持 mermaid
-        markdown: {
-          renderer: {
-            code: function(code, lang) {
-              if (lang === "mermaid") {
-                return (
-                  '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
-                );
-              }
-              return this.origin.code.apply(this, arguments);
-            }
-          }
-        },
+        // markdown: {
+        //   renderer: {
+        //     code: function(code, lang) {
+        //       if (lang === "mermaid") {
+        //         return (
+        //           '<div class="mermaid">' + mermaid.render(lang, code) + "</div>"
+        //         );
+        //       }
+        //       return this.origin.code.apply(this, arguments);
+        //     }
+        //   }
+        // },
         // 搜索配置
         search: {
           noData: {
@@ -151,8 +176,6 @@
       }
     </script>
 
-    <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
-    <script src="static/docsify/lib/docsify.min.js"></script>
     <!-- 搜索 -->
     <script src="static/docsify/lib/plugins/search.min.js"></script>
     <!-- 代码高亮  static/prismjs/components 目录下按需引入-->

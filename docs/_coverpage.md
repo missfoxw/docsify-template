@@ -1,11 +1,13 @@
-# 吸引人的主标题
-一些介绍
-- 特性1
-- 特性1
-- ...
+# 构建web文档 - docsify模板
+- 主题切换
+- 搜索关键字
+- edit in repo
+- 分页
+- 最后编辑时间
+- ......
 
-[GitLab](https://github.com/docsifyjs/docsify/)
-[点击进入](README)
+[Github](https://github.com/missfoxw/docsify-template/tree/master)
+[点击进入](./README.md)
 
 <!-- 背景图片 -->
 

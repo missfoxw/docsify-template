@@ -1,24 +1,34 @@
-# docsify-template
+## 模板特点
 
-## 说明
-整理的docsify 模板，主要包括：
-
-* [X] 主题
+* [X] 主题切换
 * [X] 分页
-* [X] 搜索
+* [X] 搜索关键字
 * [X] 最后编辑时间
 * [X] github 挂件
 * [X] edit in repo
 
-## 获取步骤
+本文测试环境：`centos7.5`
+
+## 使用模板
+
+克隆项目。
+> `git clone`支持多种协议，如`http(s)`,`ssh`,`git`等。
+
+```bash
+git clone git://github.com/missfoxw/docsify-template.git
+```
+
+## 启动前的依赖
 
 ### 安装node
+
+> docsify需要node环境，node自带npm
 
 ```bash
 # 首先安装必要的环境
 yum install gcc gcc-c++
 
-# 下载
+# 下载（可指定版本）
 wget https://npm.taobao.org/mirrors/node/v13.0.1/node-v13.0.1-linux-x64.tar.gz
 # 解压并重命名文件夹
 tar -xvf  node-v13.0.1-linux-x64.tar.xz
@@ -43,9 +53,12 @@ npm -v
 ### 安装docsify
 
 ```bash
+npm i docsify-cli -g
 ```
 
 ### 安装git
+
+使用git方便管理文档
 
 ```bash
 # 首先安装必要的环境
@@ -81,4 +94,18 @@ source /etc/profile
 git --version
 ```
 
-### 克隆项目并生成
+## 启动
+
+在`docsify-template`目录下启动模板：
+
+```bash
+# 打开下载的地址
+
+docsify serve docs
+```
+访问地址:`http://localhost:3000`
+
+## 参考
+
+* [👉docsify](https://docsify.js.org/#/)
+* [👉docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable/#/)
