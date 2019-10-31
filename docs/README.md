@@ -1,3 +1,4 @@
 > Welcome to docs-template !
 
-## [🚀快速开始](src/2/README)
+下载该模板轻松构建web文档~
+## 🚀点击左侧菜单栏开始吧！

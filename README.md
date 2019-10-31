@@ -1,3 +1,5 @@
+这是一个docsify的模板，可以助你轻松构建web文档。
+
 ## 模板特点
 
 * [X] 主题切换
@@ -9,6 +11,7 @@
 
 ## 效果浏览
 [Github Pages](https://missfoxw.github.io/docsify-template/)
+[点我看看](http://118.190.97.56:3000)
 
 ## 参考
 
