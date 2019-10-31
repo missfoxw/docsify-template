@@ -86,7 +86,7 @@ source /etc/profile
 git --version
 ```
 
-## 启动
+## 启动模板
 
 在`docsify-template`目录下启动模板：
 

@@ -8,7 +8,7 @@
 * [X] edit in repo
 
 ## 效果浏览
-[Pages查看](https://missfoxw.github.io/docsify-template/)
+[Github Pages](https://missfoxw.github.io/docsify-template/)
 
 ## 参考
 

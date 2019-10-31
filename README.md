@@ -7,6 +7,15 @@
 * [X] github 挂件
 * [X] edit in repo
 
+## 效果浏览
+[Github Pages](https://missfoxw.github.io/docsify-template/)
+
+## 参考
+
+* [👉docsify](https://docsify.js.org/#/)
+* [👉docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable/#/)
+
+
 本文测试环境：`centos7.5`
 
 ## 使用模板
@@ -94,7 +103,7 @@ source /etc/profile
 git --version
 ```
 
-## 启动
+## 启动模板
 
 在`docsify-template`目录下启动模板：
 
@@ -104,8 +113,3 @@ git --version
 docsify serve docs
 ```
 访问地址:`http://localhost:3000`
-
-## 参考
-
-* [👉docsify](https://docsify.js.org/#/)
-* [👉docsify-themeable](https://jhildenbiddle.github.io/docsify-themeable/#/)
