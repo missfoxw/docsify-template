@@ -38,28 +38,26 @@ git clone git://github.com/missfoxw/docsify-template.git
 
 > docsify需要node环境，node自带npm
 
+
 ```bash
-# 首先安装必要的环境
-yum install gcc gcc-c++
+# 以下使用二进制文件安装，该部署过程使用的安装包是已编译好的二进制文件。解压之后，在bin文件夹中就已存在node和npm，无需重复编译。
 
 # 下载（可指定版本）
-wget https://npm.taobao.org/mirrors/node/v13.0.1/node-v13.0.1-linux-x64.tar.gz
+
 # 解压并重命名文件夹
 tar -xvf  node-v13.0.1-linux-x64.tar.xz
 mv node-v13.0.1-linux-x64 node
 
-# 配置环境变量
-vim /etc/profile
-# -----------------------------------------
-#set for nodejs  
-export NODE_HOME=/usr/local/node  
-export PATH=$NODE_HOME/bin:$PATH
-# -----------------------------------------
+# 确认安装目录
+cd node
+pwd
+/opt/setup/node
 
-# 使配置文件生效
-source /etc/profile
+# 创建软链接，就可以在任意目录下直接使用node和npm命令
+ln -s /opt/setup/node/bin/node /usr/local/bin/node
+ln -s /opt/setup/node/bin/npm /usr/local/bin/npm
 
-# 成功后查看版本
+# 查看node、npm版本
 node -v
 npm -v 
 ```
