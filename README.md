@@ -43,6 +43,7 @@ git clone git://github.com/missfoxw/docsify-template.git
 # 以下使用二进制文件安装，该部署过程使用的安装包是已编译好的二进制文件。解压之后，在bin文件夹中就已存在node和npm，无需重复编译。
 
 # 下载（可指定版本）
+wget https://npm.taobao.org/mirrors/node/v13.0.1/node-v13.0.1-linux-x64.tar.xz
 
 # 解压并重命名文件夹
 tar -xvf  node-v13.0.1-linux-x64.tar.xz
