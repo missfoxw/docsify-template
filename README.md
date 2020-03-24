@@ -11,7 +11,6 @@
 
 ## 效果浏览
 * [Github Pages](https://missfoxw.github.io/docsify-template/)
-* [点我看看](http://118.190.97.56:3000)
 
 ## 参考
 
